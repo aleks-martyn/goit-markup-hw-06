@@ -516,6 +516,26 @@ img {
   text-transform: uppercase;
 }
 
+.footer-subscription {
+  margin-left: 23px;
+}
+
+.footer-form {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-send {
+  position: relative;
+}
+
+.icon-send {
+  position: absolute;
+  top: 0;
+  right: 0;
+  fill: var(--white-color);
+}
+
 /*---------------modal----------------*/
 
 .backdrop {
