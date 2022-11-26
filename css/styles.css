@@ -650,8 +650,18 @@ img {
 }
 
 .consent-wrapper {
+  display: flex;
   height: 24px;
   margin-bottom: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.consent-input {
+  width: 16px;
+  height: 15px;
+  margin-right: 8px;
+  color: 1px solid var(--title-text-color);
 }
 
 .consent-label {
