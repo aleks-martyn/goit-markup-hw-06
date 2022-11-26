@@ -747,6 +747,8 @@ img {
   border: 1px solid var(--title-text-color);
 }
 
+.icon-check {;}
+
 .consent-label {
   font-size: 14px;
   line-height: 1.71;
