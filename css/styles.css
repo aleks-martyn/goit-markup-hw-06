@@ -613,6 +613,16 @@ img {
   color: var(--input-placeholder-color);
 }
 
+.form-label {
+  position: absolute;
+  top: -18px;
+  left: 0;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+}
+
 .comment-wrapper {
   height: 120px;
   margin-bottom: 20px;
