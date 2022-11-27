@@ -1,7 +1,6 @@
 /*---Колір основного тексту #757575---*/
 /*---Колір тексту заголовків #212121---*/
 /*---Вторинний колір тексту rgba(255, 255, 255, 0.6)---*/
-/*---Black color logo #000000---*/
 /*---Accent color #2196F3---*/
 /*---Первинний колір фону #FFFFFF---*/
 /*---Вторинний колір фону #2F303A---*/
@@ -733,7 +732,6 @@ img {
 
 .consent-wrapper {
   display: flex;
-  height: 24px;
   margin-bottom: 30px;
   justify-content: center;
   align-items: center;
@@ -741,21 +739,40 @@ img {
 
 .consent-input {
   appearance: none;
-  width: 16px;
-  height: 15px;
-  margin-right: 8px;
-  border: 1px solid var(--title-text-color);
+  position: absolute;
+  transition: background-color var(--tra);
 }
 
-.icon-check {;}
-
 .consent-label {
+  display: flex;
   font-size: 14px;
   line-height: 1.71;
+  align-items: center;
+}
+
+.consent-icon-wrapper {
+  display: flex;
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--title-text-color);
+  border-radius: 2px;
+  margin-right: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.consent-input:checked + .consent-label .consent-icon-wrapper {
+  background-color: var(--accent-color);
+  border: none;
+}
+
+.consent-input:focus+.consent-label .consent-icon-wrapper {
+  border-color: var(--accent-color);
 }
 
 .consent-link {
   color: var(--accent-color);
+  margin-left: 7px;
 }
 
 .modal-icon {
