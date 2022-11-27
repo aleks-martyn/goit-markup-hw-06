@@ -580,7 +580,7 @@ img {
   letter-spacing: 0.06em;
   cursor: pointer;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  transition: background-color var(--tra);   
+  transition: background-color var(--tra);
 }
 
 .button-footer-send:hover,
@@ -766,7 +766,7 @@ img {
   border: none;
 }
 
-.consent-input:focus+.consent-label .consent-icon-wrapper {
+.consent-input:focus + .consent-label .consent-icon-wrapper {
   border-color: var(--accent-color);
 }
 
