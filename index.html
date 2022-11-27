@@ -727,14 +727,13 @@
               class="consent-input"
               id="consent"
             />
-            <span
-              href="./images/icon-check.svg"
-              width="16"
-              height="15"
-              class="icon-check"
-            ></span>
-            <label for="consent" class="consent-label"
-              >Погоджуюся з розсилкою та приймаю
+            <label for="consent" class="consent-label">
+              <span class="consent-icon-wrapper">
+                <svg class="consent-icon" width="16" height="15">
+                  <use href="./images/symbol-defs.svg#icon-check"></use>
+                </svg>
+              </span>
+              Погоджуюся з розсилкою та приймаю
               <a href="#" class="consent-link">Умови договору</a></label
             >
           </div>
