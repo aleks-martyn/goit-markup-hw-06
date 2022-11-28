@@ -650,6 +650,7 @@ img {
   border: 1px solid var(--border-close-button-color);
   border-radius: 50%;
   cursor: pointer;
+  fill: black;
   background-color: var(--white-color);
   transition: fill var(--tra);
 }
@@ -740,7 +741,6 @@ img {
 .consent-input {
   appearance: none;
   position: absolute;
-  transition: background-color var(--tra);
 }
 
 .consent-label {
@@ -754,20 +754,17 @@ img {
   display: flex;
   width: 16px;
   height: 15px;
-  border: 2px solid var(--title-text-color);
+  border: 1px solid var(--title-text-color);
   border-radius: 2px;
   margin-right: 8px;
   align-items: center;
   justify-content: center;
+  transition: background-color var(--tra), border var(--tra);
 }
 
 .consent-input:checked + .consent-label .consent-icon-wrapper {
   background-color: var(--accent-color);
-  border: none;
-}
-
-.consent-input:focus + .consent-label .consent-icon-wrapper {
-  border-color: var(--accent-color);
+  border: 1px solid var(--accent-color);
 }
 
 .consent-link {
@@ -779,6 +776,7 @@ img {
   position: absolute;
   left: 12px;
   top: 50%;
+  fill: var(--title-text-color);
   transform: translateY(-50%);
   transition: fill var(--tra);
 }
