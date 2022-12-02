@@ -457,7 +457,6 @@ img {
 
 .address {
   font-style: normal;
-  margin-top: 20px;
 }
 
 .address-link {
@@ -473,6 +472,7 @@ img {
 
 .logo-footer {
   color: var(--white-color);
+  margin-bottom: 20px;
 }
 
 .address .link {
