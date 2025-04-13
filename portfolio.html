@@ -321,32 +321,35 @@
       </section>
     </main>
 
-    <!--Футер-->
+    <!-- Футер -->
 
     <footer class="page-footer">
       <div class="container footer-container">
         <div>
-          <a href="./index.html" class="logo-footer logo"
-            ><span class="logo-link">Web</span>Studio</a
+          <a class="logo footer-logo" href="./index.html"
+            ><span class="logo-accent">Web</span>Studio</a
           >
-          <address class="address">
-            <ul class="address list">
+
+          <address>
+            <ul class="address-list">
               <li class="item">
                 <a
+                  class="footer-link colored"
+                  rel="noreferrer noopener"
                   href="https://goo.gl/maps/zwCasqjWgcNjda1f8"
                   target="_blank"
-                  rel="noreferrer noopener"
-                  class="address-link button primary"
                   >м. Київ, пр-т Лесі Українки, 26</a
                 >
               </li>
+
               <li class="item">
-                <a href="mailto:info@devstudio.com" class="button primary link"
+                <a class="footer-link" href="mailto:info@devstudio.com"
                   >info@devstudio.com</a
                 >
               </li>
+
               <li class="item">
-                <a href="tel:+380961111111" class="button primary link"
+                <a class="footer-link" href="tel:+380961111111"
                   >+38 096 111 11 11</a
                 >
               </li>
@@ -354,15 +357,18 @@
           </address>
         </div>
 
-        <div class="footer-social">
-          <h3 class="footer-subtitle">приєднуйтесь</h3>
-          <ul class="footer-soc list">
-            <li class="footer-soc-item">
+        <div>
+          <p class="footer-slogan">приєднуйтесь</p>
+
+          <ul class="footer-socials">
+            <li>
               <a
+                class="thumb footer-thumb"
+                rel="noreferrer noopener"
                 href="https://www.instagram.com"
                 target="_blank"
-                rel="noreferrer noopener"
-                class="footer-thumb thumb"
+                aria-label="Instagram"
+                lang="en"
               >
                 <svg class="icon" width="20" height="20">
                   <use href="./images/icons.svg#icon-instagram"></use>
@@ -370,12 +376,14 @@
               </a>
             </li>
 
-            <li class="footer-soc-item">
+            <li>
               <a
+                class="thumb footer-thumb"
+                rel="noreferrer noopener"
                 href="https://www.twitter.com"
                 target="_blank"
-                rel="noreferrer noopener"
-                class="footer-thumb thumb"
+                aria-label="Twitter"
+                lang="en"
               >
                 <svg class="icon" width="20" height="20">
                   <use href="./images/icons.svg#icon-twitter"></use>
@@ -383,12 +391,14 @@
               </a>
             </li>
 
-            <li class="footer-soc-item">
+            <li>
               <a
+                class="thumb footer-thumb"
+                rel="noreferrer noopener"
                 href="https://www.facebook.com"
                 target="_blank"
-                rel="noreferrer noopener"
-                class="footer-thumb thumb"
+                aria-label="Facebook"
+                lang="en"
               >
                 <svg class="icon" width="20" height="20">
                   <use href="./images/icons.svg#icon-facebook"></use>
@@ -396,12 +406,14 @@
               </a>
             </li>
 
-            <li class="footer-soc-item">
+            <li>
               <a
+                class="thumb footer-thumb"
+                rel="noreferrer noopener"
                 href="https://www.linkedin.com"
                 target="_blank"
-                rel="noreferrer noopener"
-                class="footer-thumb thumb"
+                aria-label="Linkedin"
+                lang="en"
               >
                 <svg class="icon" width="20" height="20">
                   <use href="./images/icons.svg#icon-linkedin"></use>
@@ -412,26 +424,24 @@
         </div>
 
         <div class="footer-subscription">
-          <h3 class="footer-subtitle">Підпишіться на розсилку</h3>
+          <p class="footer-slogan">Підпишіться на розсилку</p>
+
           <form class="footer-form">
-            <div class="footer-field">
+            <label class="footer-label">
               <input
-                type="email"
-                name="mail"
                 class="footer-input"
+                name="mail"
+                type="email"
                 placeholder="E-mail"
               />
-            </div>
+            </label>
 
-            <div class="footer-send">
-              <button type="submit" class="button-footer-send">
-                Підписатися
-              </button>
-
-              <svg class="icon-send" width="24" height="24">
+            <button class="footer-submit-btn" type="submit">
+              Підписатися
+              <svg class="icon icon-send" width="24" height="24">
                 <use href="./images/icons.svg#icon-send"></use>
               </svg>
-            </div>
+            </button>
           </form>
         </div>
       </div>
