@@ -624,7 +624,7 @@
           </address>
         </div>
 
-        <div>
+        <div class="footer-inner">
           <p class="footer-slogan">приєднуйтесь</p>
 
           <ul class="footer-socials">
@@ -690,15 +690,16 @@
           </ul>
         </div>
 
-        <div class="footer-subscription">
-          <p class="footer-slogan">Підпишіться на розсилку</p>
+        <form class="footer-inner" name="subscription-form">
+          <fieldset class="footer-fieldset">
+            <legend class="footer-slogan">Підпишіться на розсилку</legend>
 
-          <form class="footer-form">
             <label class="footer-label">
               <input
                 class="footer-input"
-                name="mail"
+                name="email"
                 type="email"
+                aria-label="Електронна пошта"
                 placeholder="E-mail"
               />
             </label>
@@ -709,8 +710,8 @@
                 <use href="./images/icons.svg#icon-send"></use>
               </svg>
             </button>
-          </form>
-        </div>
+          </fieldset>
+        </form>
       </div>
     </footer>
 
