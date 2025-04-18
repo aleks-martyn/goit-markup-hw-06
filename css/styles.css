@@ -22,6 +22,7 @@
 /* --- Колір фону backdrop модального вікна сторінки Студія rgb(0 0 0 / .2) --- */
 /* --- Тінь модального вікна: 0px 1px 3px rgb(0 0 0 / .12), 0px 1px 1px rgb(0 0 0 / .14),
     0px 2px 1px rgb(0 0 0 / .2) --- */
+/* --- Колір кнопки закриття модального вікна #000 --- */
 /* --- Колір рамки кнопки закриття модального вікна rgb(0 0 0 / .1) --- */
 /* --- Колір рамки input модального вікна rgb(33 33 33 / .2) --- */
 /* --- Колір placeholder поля введення модального вікна rgb(117 117 117 / .5) --- */
@@ -40,6 +41,8 @@
   --secondary-border-color: #eee;
   --button-active-color: #188ce8;
   --social-link-color: #afb1b8;
+  --footer-field-border-color: rgb(255 255 255 / 0.3);
+  --footer-field-shadow: 0px 4px 4px rgb(0 0 0 / 0.15);
   --footer-icon-bg-color: rgb(255 255 255 / 0.1);
   --hero-grad-color: rgb(47 48 58 / 0.4);
   --team-item-shadow: 0px 1px 3px rgb(0 0 0 / 0.12),
@@ -53,24 +56,14 @@
   --modal-backdrop-bg-color: rgb(0 0 0 / 0.2);
   --modal-shadow: 0px 1px 3px rgb(0 0 0 / 0.12), 0px 1px 1px rgb(0 0 0 / 0.14),
     0px 2px 1px rgb(0 0 0 / 0.2);
+  --close-btn-color: #000;
   --close-btn-border-color: rgb(0 0 0 / 0.1);
-  --footer-field-border-color: rgb(255 255 255 / 0.3);
-  --footer-field-shadow: 0px 4px 4px rgb(0 0 0 / 0.15);
+  --input-border-color: rgb(33 33 33 / 0.2);
+  --input-placeholder-color: rgb(117 117 117 / 0.5);
   --tra: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  --white-color: #ffffff;
   --secondary-background-color: #2f303a;
-  --ashen-background-color: #f5f4fa;
-  --header-border-color: #ececec;
   --cards-border-color: #eeeeee;
-  --social-links-color: #afb1b8;
-  --background-footer-icon-color: rgba(255, 255, 255, 0.1);
-  --background-section-works-color: rgba(47, 48, 58, 0.8);
-  --background-overlay-portfolio-color: rgba(33, 150, 243, 0.9);
-  --background-backdrop-color: rgba(0, 0, 0, 0.2);
-  --border-close-button-color: rgba(0, 0, 0, 0.1);
-  --input-border-color: rgba(33, 33, 33, 0.2);
-  --input-placeholder-color: rgba(117, 117, 117, 0.5);
 }
 
 body {
@@ -467,14 +460,10 @@ ul {
   min-width: 216px;
   height: 50px;
   padding: 10px 32px;
-  border: 0;
-  border-radius: 4px;
   text-align: center;
-  color: var(--white-color);
+  color: var(--primary-bg-color);
   background-color: var(--accent-color);
-  font-family: inherit;
   font-weight: 700;
-  font-size: 16px;
   line-height: 1.88;
   letter-spacing: 0.06em;
   transition: background-color var(--tra);
@@ -661,13 +650,12 @@ ul {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--background-backdrop-color);
-  transition: opacity var(--tra), visibility var(--tra);
+  background-color: var(--modal-backdrop-bg-color);
+  transition: opacity var(--tra);
 }
 
 .backdrop.is-hidden {
   opacity: 0;
-  visibility: hidden;
   pointer-events: none;
 }
 
@@ -679,80 +667,99 @@ ul {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scaleY(1);
   width: 528px;
-  height: 581px;
-  background-color: var(--white-color);
-  border-radius: 4px;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
-  transition: transform var(--tra);
   padding: 40px;
+  background-color: var(--primary-bg-color);
+  border-radius: 4px;
+  transform: translate(-50%, -50%) scaleY(1);
+  box-shadow: var(--modal-shadow);
+  transition: transform var(--tra);
 }
 
 .backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scaleY(0);
+  transform: translate(-50%, -50%) scaleY(0.9);
 }
 
-.modal-close-button {
+.modal-close-btn.thumb {
   position: absolute;
   top: 8px;
   right: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 30px;
   height: 30px;
-  padding: 0;
-  border: 1px solid var(--border-close-button-color);
-  border-radius: 50%;
-  cursor: pointer;
-  fill: black;
-  background-color: var(--white-color);
-  transition: fill var(--tra);
+  border: 1px solid var(--close-btn-border-color);
+  color: var(--close-btn-color);
+  background-color: transparent;
+  transition: color var(--tra);
 }
 
-.modal-close-button:hover,
-.modal-close-button:focus {
-  fill: var(--accent-color);
+.modal-close-btn.thumb:hover,
+.modal-close-btn.thumb:focus {
+  color: var(--accent-color);
 }
 
-.modal-title {
+/* ---modal-form--- */
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.group-title {
+  margin-bottom: 12px;
   font-weight: 700;
   font-size: 20px;
   line-height: 1.17;
   color: var(--title-text-color);
   text-align: center;
-  margin-bottom: 30px;
 }
 
-.input-wrapper {
+.form-field {
   position: relative;
-  margin-bottom: 28px;
+  display: block;
 }
 
-.modal-input {
+.form-field:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.form-field:focus-within > .form-icon {
+  fill: var(--accent-color);
+}
+
+.form-icon {
+  position: absolute;
+  left: 12px;
+  top: 38px;
+  fill: var(--title-text-color);
+  transform: translateY(-50%);
+  transition: fill var(--tra);
+}
+
+.form-label {
+  margin-bottom: 4px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+}
+
+.form-input {
   display: block;
   width: 100%;
-  height: 40px;
-  outline: transparent;
-  border-width: 1px;
-  border-style: solid;
-  border-color: var(--input-border-color);
-  border-radius: 4px;
   padding-left: 42px;
   padding-right: 16px;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-block: 12px;
   font-weight: 400;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.01em;
   color: var(--title-text-color);
+  border: 1px solid var(--input-border-color);
+  border-radius: 4px;
+  outline: transparent;
   transition: border-color var(--tra);
 }
 
-.modal-input::placeholder {
+.form-input::placeholder {
   font-weight: 400;
   font-size: 12px;
   line-height: 1.17;
@@ -760,61 +767,43 @@ ul {
   color: var(--input-placeholder-color);
 }
 
-.modal-input:focus {
+.form-input:focus {
   border-color: var(--accent-color);
 }
 
-.modal-input:focus + .modal-icon {
-  fill: var(--accent-color);
-}
-
-.form-label {
-  position: absolute;
-  top: -18px;
-  left: 0;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.01em;
-}
-
-.comment-wrapper {
-  margin-bottom: 20px;
-}
-
-.modal-input.comment {
+.form-input.comment {
   height: 120px;
   padding-left: 16px;
 }
 
 .consent-wrapper {
   display: flex;
-  margin-bottom: 30px;
   justify-content: center;
   align-items: center;
+  margin-bottom: 30px;
 }
 
 .consent-input {
-  appearance: none;
   position: absolute;
+  appearance: none;
 }
 
 .consent-label {
   display: flex;
+  align-items: center;
   font-size: 14px;
   line-height: 1.71;
-  align-items: center;
 }
 
 .consent-icon-wrapper {
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 16px;
   height: 15px;
+  margin-right: 8px;
   border: 1px solid var(--title-text-color);
   border-radius: 2px;
-  margin-right: 8px;
-  align-items: center;
-  justify-content: center;
   transition: background-color var(--tra), border var(--tra);
 }
 
@@ -824,26 +813,15 @@ ul {
 }
 
 .consent-link {
-  color: var(--accent-color);
   margin-left: 7px;
-}
-
-.modal-icon {
-  position: absolute;
-  left: 12px;
-  top: 50%;
-  fill: var(--title-text-color);
-  transform: translateY(-50%);
-  transition: fill var(--tra);
+  color: var(--accent-color);
 }
 
 .secondary.modal-send {
   display: block;
   min-width: 200px;
-  cursor: pointer;
-  margin-left: auto;
-  margin-right: auto;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  margin-inline: auto;
+  box-shadow: var(--footer-field-shadow);
 }
 
 /* --------------Portfolio----------------- */
