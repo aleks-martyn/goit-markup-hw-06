@@ -744,7 +744,6 @@ ul {
 
 .icon-wrap {
   display: flex;
-  justify-content: center;
   align-items: center;
   width: 16px;
   height: 15px;
@@ -787,22 +786,40 @@ ul {
   margin-bottom: 50px;
 }
 
-.portfolio-filter .button {
+.radio {
+  position: absolute;
+  appearance: none;
+}
+
+.filter-label {
+  display: inline-block;
   padding: 6px 22px;
   font-weight: 500;
+  font-size: 16px;
   line-height: 1.63;
   letter-spacing: 0.03em;
   color: var(--title-text-color);
   background-color: var(--additional-bg-color);
+  border-radius: 4px;
+  cursor: pointer;
   transition: color var(--tra), background-color var(--tra),
     box-shadow var(--tra);
 }
 
-.portfolio-filter .button:hover,
-.portfolio-filter .button:focus {
+.radio:hover + .filter-label {
   color: var(--primary-bg-color);
   background-color: var(--accent-color);
   box-shadow: var(--filter-btn-shadow);
+}
+
+.radio:checked + .filter-label {
+  color: var(--primary-bg-color);
+  background-color: var(--button-active-color);
+  box-shadow: var(--filter-btn-shadow);
+}
+
+.radio:focus + .filter-label {
+  outline: 2px solid var(--close-btn-color);
 }
 
 /* ---portfolio-list--- */
